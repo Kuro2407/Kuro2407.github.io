@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>KuroDev | Unity Developer</title>
+
+  <!-- Monospace font with character: JetBrains Mono (ideal for terminal look) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <div class="nav-logo">&gt; KuroDev_</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <p class="hero-prompt">// unity_developer.exe</p>
+    <h1 class="hero-name">Kuro</h1>
+    <p class="hero-tagline">
+      &gt; <span id="typed-text"></span><span class="cursor"></span>
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="section-header">
+      <span class="section-label">01</span>
+      <h2 class="section-title">About Me</h2>
+    </div>
+
+    <p class="bio">
+      Game developer passionate about crafting <strong>immersive experiences</strong>.
+      Specialized in <strong>Unity</strong> and the full development cycle: gameplay programming,
+      combat systems, shaders, and optimization. Looking for my first professional role
+      in the games industry where I can grow and contribute.
+    </p>
+
+    <!-- RPG-style skill bars -->
+    <div class="skills-grid">
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Unity / C#</span>
+          <span class="skill-level">LVL 78</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-level="78"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Game Design</span>
+          <span class="skill-level">LVL 65</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-level="65"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Shaders / HLSL</span>
+          <span class="skill-level">LVL 35</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-level="35"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Git / Version Control</span>
+          <span class="skill-level">LVL 70</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-level="70"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Blender (3D basics)</span>
+          <span class="skill-level">LVL 50</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-level="50"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">AR Development</span>
+          <span class="skill-level">LVL 70</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-level="70"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-label">02</span>
+      <h2 class="section-title">Projects</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img
+          class="project-img"
+          src="img/project1.png"
+          alt="Game 1 screenshot"
+          onerror="this.style.display='block'"
+        />
+        <span class="project-tag">Unity 3D</span>
+        <div class="project-body">
+          <h3 class="project-title">Game Title 1</h3>
+          <p class="project-desc">
+            Brief description of the game: genre, core mechanic, most interesting technical aspect.
+            2-3 sentences is enough.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-link">▶ Play</a>
+            <a href="#" class="project-link">⌥ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          class="project-img"
+          src="img/project2.png"
+          alt="Game 2 screenshot"
+          onerror="this.style.display='block'"
+        />
+        <span class="project-tag">Unity 2D</span>
+        <div class="project-body">
+          <h3 class="project-title">Game Title 2</h3>
+          <p class="project-desc">
+            Another short description. If it's a jam game, mention how long you had
+            and the jam theme.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-link">▶ Itch.io</a>
+            <a href="#" class="project-link">⌥ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          class="project-img"
+          src="img/project3.png"
+          alt="Game 3 screenshot"
+          onerror="this.style.display='block'"
+        />
+        <span class="project-tag">Game Jam</span>
+        <div class="project-body">
+          <h3 class="project-title">Game Title 3</h3>
+          <p class="project-desc">
+            If you don't have 3 projects yet, a WIP or prototype works great.
+            Recruiters value seeing your process, not just finished products.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-link">⌥ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-label">03</span>
+      <h2 class="section-title">Contact</h2>
+    </div>
+
+    <p class="contact-intro">
+      Open to opportunities in the games industry.
+      If you have a role or want to talk about a project, reach out.
+    </p>
+
+    <div class="contact-links">
+
+      <a href="mailto:your@email.com" class="contact-item">
+        <span class="contact-icon">✉</span>
+        <div>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">your@email.com</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/yourusername" target="_blank" class="contact-item">
+        <span class="contact-icon">⌥</span>
+        <div>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/yourusername</span>
+        </div>
+      </a>
+
+      <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-item">
+        <span class="contact-icon">in</span>
+        <div>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/yourusername</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Built with <span>&lt;3</span> and too much coffee · <span>2025</span> · Kuro</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
