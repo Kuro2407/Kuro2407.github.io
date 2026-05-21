@@ -50,28 +50,6 @@
 
 
     /* ----------------------------------------------------------
-       SKILL BAR ANIMATION ON SCROLL
-       IntersectionObserver notifies us when an element enters
-       the visible area of the screen. The bars only animate
-       when the user scrolls to them.
-    ---------------------------------------------------------- */
-    const skillFills = document.querySelectorAll('.skill-fill');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const fill = entry.target;
-          const level = fill.getAttribute('data-level');
-          fill.style.width = level + '%';
-          observer.unobserve(fill);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    skillFills.forEach(fill => observer.observe(fill));
-
-
-    /* ----------------------------------------------------------
        ACTIVE NAV LINK on scroll
     ---------------------------------------------------------- */
     const sections = document.querySelectorAll('section[id]');
