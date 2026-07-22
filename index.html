@@ -4,12 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>KuroDev | Unity Developer</title>
+  <title>KuroDev | Unity Developer & 3D Artist</title>
 
-  <!-- Monospace font with character: JetBrains Mono (ideal for terminal look) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -48,48 +46,20 @@
       <span class="section-label">01</span>
       <h2 class="section-title">About Me</h2>
     </div>
-
     <p class="bio">
       Game developer passionate about crafting <strong>immersive experiences</strong>.
       Specialized in <strong>Unity</strong> and the full development cycle: gameplay programming,
       combat systems, shaders, and optimization. Looking for my first professional role
       in the games industry where I can grow and contribute.
     </p>
-
-      <!-- Skills grid with icons -->
-<div class="skills-grid">
-
-  <div class="skill-item">
-    <span class="skill-icon">▸</span>
-    <span class="skill-name">Unity / C#</span>
-  </div>
-
-  <div class="skill-item">
-    <span class="skill-icon">▸</span>
-    <span class="skill-name">AR Development</span>
-  </div>
-
-  <div class="skill-item">
-    <span class="skill-icon">▸</span>
-    <span class="skill-name">Git / Version Control</span>
-  </div>
-
-  <div class="skill-item">
-    <span class="skill-icon">▸</span>
-    <span class="skill-name">Game Design</span>
-  </div>
-
-  <div class="skill-item">
-    <span class="skill-icon">▸</span>
-    <span class="skill-name">Blender 3D</span>
-  </div>
-
-  <div class="skill-item">
-    <span class="skill-icon">▸</span>
-    <span class="skill-name">Shaders / HLSL</span>
-  </div>
-
-</div>
+    <div class="skills-grid">
+      <div class="skill-item"><span class="skill-icon">▸</span><span class="skill-name">Unity / C#</span></div>
+      <div class="skill-item"><span class="skill-icon">▸</span><span class="skill-name">AR Development</span></div>
+      <div class="skill-item"><span class="skill-icon">▸</span><span class="skill-name">Git / Version Control</span></div>
+      <div class="skill-item"><span class="skill-icon">▸</span><span class="skill-name">Game Design</span></div>
+      <div class="skill-item"><span class="skill-icon">▸</span><span class="skill-name">Blender 3D</span></div>
+      <div class="skill-item"><span class="skill-icon">▸</span><span class="skill-name">Shaders / HLSL</span></div>
+    </div>
   </section>
 
   <!-- ===== PROJECTS ===== -->
@@ -99,71 +69,105 @@
       <h2 class="section-title">Projects</h2>
     </div>
 
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <img
-          class="project-img"
-          src="img/project1.png"
-          alt="Game 1 screenshot"
-          onerror="this.style.display='block'"
-        />
-        <span class="project-tag">Unity 3D</span>
-        <div class="project-body">
-          <h3 class="project-title">Game Title 1</h3>
-          <p class="project-desc">
-            Brief description of the game: genre, core mechanic, most interesting technical aspect.
-            2-3 sentences is enough.
-          </p>
-          <div class="project-links">
-            <a href="#" class="project-link">▶ Play</a>
-            <a href="#" class="project-link">⌥ GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img
-          class="project-img"
-          src="img/project2.png"
-          alt="Game 2 screenshot"
-          onerror="this.style.display='block'"
-        />
-        <span class="project-tag">Unity 2D</span>
-        <div class="project-body">
-          <h3 class="project-title">Game Title 2</h3>
-          <p class="project-desc">
-            Another short description. If it's a jam game, mention how long you had
-            and the jam theme.
-          </p>
-          <div class="project-links">
-            <a href="#" class="project-link">▶ Itch.io</a>
-            <a href="#" class="project-link">⌥ GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img
-          class="project-img"
-          src="img/project3.png"
-          alt="Game 3 screenshot"
-          onerror="this.style.display='block'"
-        />
-        <span class="project-tag">Game Jam</span>
-        <div class="project-body">
-          <h3 class="project-title">Game Title 3</h3>
-          <p class="project-desc">
-            If you don't have 3 projects yet, a WIP or prototype works great.
-            Recruiters value seeing your process, not just finished products.
-          </p>
-          <div class="project-links">
-            <a href="#" class="project-link">⌥ GitHub</a>
-          </div>
-        </div>
-      </div>
-
+    <div class="project-tabs">
+      <button class="project-tab active" data-ptab="games">🎮 Game Dev</button>
+      <button class="project-tab" data-ptab="art">🧊 3D Art &amp; Environments</button>
     </div>
+
+    <!-- Panel: juegos -->
+    <div class="project-panel active" id="ptab-games">
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img class="project-img" src="img/project1.png" alt="Game 1 screenshot" />
+          <span class="project-tag">Unity 3D</span>
+          <div class="project-body">
+            <h3 class="project-title">Game Title 1</h3>
+            <p class="project-desc">Brief description of the game: genre, core mechanic, most interesting technical aspect.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">▶ Play</a>
+              <a href="#" class="project-link">⌥ GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img class="project-img" src="img/project2.png" alt="Game 2 screenshot" />
+          <span class="project-tag">Unity 2D</span>
+          <div class="project-body">
+            <h3 class="project-title">Game Title 2</h3>
+            <p class="project-desc">Another short description. If it's a jam game, mention how long you had and the jam theme.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">▶ Itch.io</a>
+              <a href="#" class="project-link">⌥ GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img class="project-img" src="img/project3.png" alt="Game 3 screenshot" />
+          <span class="project-tag">Game Jam</span>
+          <div class="project-body">
+            <h3 class="project-title">Game Title 3</h3>
+            <p class="project-desc">If you don't have 3 projects yet, a WIP or prototype works great.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">⌥ GitHub</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /ptab-games -->
+
+    <!-- Panel: renders 3D — CARRUSEL -->
+    <div class="project-panel" id="ptab-art">
+
+      <div class="carousel" id="render-carousel">
+
+        <button class="carousel-arrow carousel-arrow--prev" id="carousel-prev">&#8592;</button>
+        <button class="carousel-arrow carousel-arrow--next" id="carousel-next">&#8594;</button>
+
+        <!-- El track es el contenedor que se desliza lateralmente -->
+        <div class="carousel-track" id="carousel-track">
+
+          <div class="carousel-slide">
+            <img class="carousel-img" src="img/Guitarra/PortfolioGuitarra1.png" alt="3D render 1" />
+            <div class="carousel-info">
+              <h3 class="render-title">Guitarra</h3>
+              <p class="render-desc">This was the first personal project I created; I used only Blender.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img class="carousel-img" src="img/Guitarra/PortfolioGuitarra2.png" alt="3D render 2" />
+            <div class="carousel-info">
+              <h3 class="render-title">Guitarra</h3>
+              <p class="render-desc">You can see the VideoRender on my ArtStation.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img class="carousel-img" src="img/Guitarra/PortfolioGuitarra3.png" alt="3D render 3" />
+            <div class="carousel-info">
+              <h3 class="render-title">Guitarra</h3>
+              <p class="render-desc">Description.</p>
+            </div>
+          </div>
+
+        </div><!-- /carousel-track -->
+
+        <div class="carousel-dots" id="carousel-dots"></div>
+
+      </div>
+
+      <div class="art-cta">
+        <a href="https://kuro05.artstation.com" target="_blank" class="btn btn-art">
+          View full portfolio on ArtStation ──▶
+        </a>
+      </div>
+
+    </div><!-- /ptab-art -->
+
   </section>
 
   <!-- ===== CONTACT ===== -->
@@ -172,42 +176,35 @@
       <span class="section-label">03</span>
       <h2 class="section-title">Contact</h2>
     </div>
-
     <p class="contact-intro">
       Open to opportunities in the games industry.
       If you have a role or want to talk about a project, reach out.
     </p>
-
     <div class="contact-links">
-
-      <a href="mailto:your@email.com" class="contact-item">
+      <a href="mailto:kuro05art@gmail.com" class="contact-item">
         <span class="contact-icon">✉</span>
         <div>
           <span class="contact-label">Email</span>
           <span class="contact-value">kuro05art@gmail.com</span>
         </div>
       </a>
-
-      <a href="https://github.com/yourusername" target="_blank" class="contact-item">
+      <a href="https://github.com/Kuro2407" target="_blank" class="contact-item">
         <span class="contact-icon">⌥</span>
         <div>
           <span class="contact-label">GitHub</span>
           <span class="contact-value">github.com/Kuro2407</span>
         </div>
       </a>
-
-      <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-item">
+      <a href="https://kuro05.artstation.com" target="_blank" class="contact-item">
         <span class="contact-icon">AS</span>
         <div>
           <span class="contact-label">ArtStation</span>
           <span class="contact-value">kuro05.artstation.com</span>
         </div>
       </a>
-
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer>
     <p>Built with <span>&lt;3</span> and too much coffee · <span>2025</span> · Kuro</p>
   </footer>
