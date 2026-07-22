@@ -598,3 +598,14 @@ footer span { color: var(--neon-green); }
 .carousel-slide.active {
   display: flex;
 }
+
+.carousels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+  .carousels-grid { grid-template-columns: 1fr; }
+}
