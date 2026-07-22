@@ -34,7 +34,6 @@ let isDeleting  = false;
 
 function type() {
   const current = phrases[phraseIndex];
-
   if (isDeleting) {
     charIndex--;
     typedEl.textContent = current.slice(0, charIndex);
@@ -42,21 +41,11 @@ function type() {
     charIndex++;
     typedEl.textContent = current.slice(0, charIndex);
   }
-
   let speed = isDeleting ? 40 : 80;
-
-  if (!isDeleting && charIndex === current.length) {
-    speed = 2000;
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-    speed = 400;
-  }
-
+  if (!isDeleting && charIndex === current.length) { speed = 2000; isDeleting = true; }
+  else if (isDeleting && charIndex === 0) { isDeleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; speed = 400; }
   setTimeout(type, speed);
 }
-
 type();
 
 
@@ -83,50 +72,54 @@ sections.forEach(s => navObserver.observe(s));
 
 
 /* ============================================================
-   CARRUSEL DE RENDERS — sin efecto slide, muestra/oculta
+   CARRUSELES — múltiples independientes
+   ============================================================
+   En lugar de buscar un ID único, buscamos TODOS los elementos
+   con el atributo [data-carousel] y creamos una instancia
+   independiente para cada uno. Es como un bucle que instancia
+   el mismo prefab varias veces en Unity.
 ============================================================ */
-const carousel      = document.getElementById('render-carousel');
-const slides        = carousel.querySelectorAll('.carousel-slide');
-const dotsContainer = document.getElementById('carousel-dots');
-const prevBtn       = document.getElementById('carousel-prev');
-const nextBtn       = document.getElementById('carousel-next');
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
 
-let currentSlide = 0;
-let autoTimer    = null;
-const INTERVAL   = 3500;
+  const slides        = carousel.querySelectorAll('.carousel-slide');
+  const dotsContainer = carousel.querySelector('.carousel-dots');
+  const prevBtn       = carousel.querySelector('.carousel-arrow--prev');
+  const nextBtn       = carousel.querySelector('.carousel-arrow--next');
 
-/* Activar el primero */
-slides[0].classList.add('active');
+  let current   = 0;
+  let autoTimer = null;
+  const INTERVAL = 3500;
 
-/* Generar puntos */
-slides.forEach((_, i) => {
-  const dot = document.createElement('button');
-  dot.classList.add('carousel-dot');
-  if (i === 0) dot.classList.add('active');
-  dot.addEventListener('click', () => goTo(i));
-  dotsContainer.appendChild(dot);
+  /* Generar puntos para este carrusel */
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.add('carousel-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  function startAuto() { autoTimer = setInterval(next, INTERVAL); }
+  function stopAuto()  { clearInterval(autoTimer); }
+
+  carousel.addEventListener('mouseenter', stopAuto);
+  carousel.addEventListener('mouseleave', startAuto);
+
+  startAuto();
 });
-
-const dots = dotsContainer.querySelectorAll('.carousel-dot');
-
-function goTo(index) {
-  slides[currentSlide].classList.remove('active');
-  dots[currentSlide].classList.remove('active');
-  currentSlide = (index + slides.length) % slides.length;
-  slides[currentSlide].classList.add('active');
-  dots[currentSlide].classList.add('active');
-}
-
-function next() { goTo(currentSlide + 1); }
-function prev() { goTo(currentSlide - 1); }
-
-prevBtn.addEventListener('click', prev);
-nextBtn.addEventListener('click', next);
-
-function startAuto() { autoTimer = setInterval(next, INTERVAL); }
-function stopAuto()  { clearInterval(autoTimer); }
-
-carousel.addEventListener('mouseenter', stopAuto);
-carousel.addEventListener('mouseleave', startAuto);
-
-startAuto();
